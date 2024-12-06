@@ -12,7 +12,7 @@ void WebSocketSecure::connect(std::string_view host, int port)
   WebSocketBase::connect(url);
 }
 
-websocketpp::lib::shared_ptr<websocketpp::lib::asio::ssl::context> WebSocketSecure::on_tls_init([[maybe_unused]] websocketpp::connection_hdl hdl)
+websocketpp::lib::shared_ptr<websocketpp::lib::asio::ssl::context> WebSocketSecure::on_tls_init([[maybe_unused]]websocketpp::connection_hdl hdl)
 {
   auto ctx = websocketpp::lib::make_shared<asio::ssl::context>(asio::ssl::context::tlsv13_client);
   try {
